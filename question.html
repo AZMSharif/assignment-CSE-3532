@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiple Choice Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      background-color: aliceblue;
+    }
+    form{
+      margin-top:20px;
+    }
+    .quiz-container {
+      width: 80%;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    .question {
+      width:45%;
+      margin-bottom: 20px;
+      background-color: #fff;
+      padding:20px;
+    }
+    .question:nth-child(odd){
+      margin-right:5%;
+    }
+    .question p{
+      font-weight: bold;
+    }
+    
+    .answers {
+      margin-bottom: 20px;
+    }
+    .answers label:not(:first-child){
+      border-top:1px solid #e0e0e0;
+    }
+    
+    label {
+      padding:10px 0;
+      display: block;
+      margin-bottom: 10px;
+    }
+    
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+    
+    .submit-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    
+    .result {
+      font-weight: bold;
+      font-size: 22px;
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+      text-align: center;
+    }
+    .d-flex{
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Multiple Choice Quiz</h1>
+    <hr>
+    <form id="quiz-form">
+        <div class="question">
+          <p>1. Programming: Which of the following is NOT a valid data type in Python?</p>
+          <div class="answers">
+            <label>
+              <input type="radio" name="q1" value="a">
+               Integer
+            </label>
+            <label>
+              <input type="radio" name="q1" value="b">
+               String
+            </label>
+            <label>
+              <input type="radio" name="q1" value="c">
+               Boolean
+            </label>
+            <label>
+              <input type="radio" name="q1" value="d">
+               Dictionary (Key-Value pair)
+            </label>
+            <label>
+              <input type="radio" name="q1" value="e">
+               List (Improved - covers modern Python features)
+            </label>
+          </div>
+        </div>
+        
+       
+        
+        <div class="question">
+          <p>2. Web Development: What is the primary function of a Content Delivery Network (CDN)?</p>
+          <div class="answers">
+            <label>
+              <input type="radio" name="q2" value="a">
+              Secure user authentication
+            </label>
+            <label>
+              <input type="radio" name="q2" value="b">
+               Enhance website performance by distributing content globally
+            </label>
+            <label>
+              <input type="radio" name="q2" value="c">
+              Develop responsive web designs
+            </label>
+            <label>
+              <input type="radio" name="q2" value="d">
+              Create interactive web applications
+            </label>
+            <label>
+              <input type="radio" name="q2" value="e">
+               Manage database queries (Improved - highlights performance benefit)
+            </label>
+          </div>
+        </div>
+
+        <div class="question">
+          <p>3. Networking: Which protocol is responsible for routing data packets across the internet?</p>
+          <div class="answers">
+            <label>
+              <input type="radio" name="q3" value="a">
+               TCP
+            </label>
+            <label>
+              <input type="radio" name="q3" value="b">
+               UDP
+            </label>
+            <label>
+              <input type="radio" name="q3" value="c">
+              HTTP
+            </label>
+            <label>
+              <input type="radio" name="q3" value="d">
+              IP (Internet Protocol)
+            </label>
+            <label>
+              <input type="radio" name="q3" value="e">
+              DNS (Improved - focuses on core routing functionality)
+            </label>
+          </div>
+        </div>
+
+        <div class="question">
+          <p>4. Cloud Computing: What is the key difference between Infrastructure as a Service (IaaS) and Platform as a Service (PaaS)?</p>
+          <div class="answers">
+            <label>
+              <input type="radio" name="q4" value="a">
+              IaaS provides virtual machines, while PaaS offers pre-configured environments.
+            </label>
+            <label>
+              <input type="radio" name="q4" value="b">
+              IaaS is more expensive than PaaS.
+            </label>
+            <label>
+              <input type="radio" name="q4" value="c">
+              IaaS is for development, while PaaS is for production use cases.
+            </label>
+            <label>
+              <input type="radio" name="q4" value="d">
+              IaaS requires less management effort than PaaS. (Improved - emphasizes core PaaS benefit)
+            </label>
+            <label>
+              <input type="radio" name="q4" value="e">
+               IaaS is offered by fewer providers than PaaS.
+            </label>
+          </div>
+        </div>
+
+        
+
+        <div class="question">
+          <p>5. Cybersecurity: Which type of malware encrypts a user's files and demands a ransom for decryption?</p>
+          <div class="answers">
+            <label>
+              <input type="radio" name="q5" value="a">
+               Virus
+            </label>
+            <label>
+              <input type="radio" name="q5" value="b">
+               Worm
+            </label>
+            <label>
+              <input type="radio" name="q5" value="c">
+              Trojan Horse
+            </label>
+            <label>
+              <input type="radio" name="q5" value="d">
+               Ransomware  (Improved - focuses on specific malware type)
+            </label>
+            <label>
+              <input type="radio" name="q5" value="e">
+               Spyware
+            </label>
+          </div>
+        </div>
+
+        <div class="question">
+          <p>6. Artificial Intelligence (AI): What is the main difference between supervised and unsupervised learning in AI?</p>
+          <div class="answers">
+            <label>
+              <input type="radio" name="q6" value="a">
+               Supervised learning uses labeled data for training, while unsupervised learning doesn't.
+            </label>
+            <label>
+              <input type="radio" name="q6" value="b">
+              Supervised learning is for image recognition, while unsupervised learning is for natural language processing.
+            </label>
+            <label>
+              <input type="radio" name="q6" value="c">
+               Supervised learning is faster to train than unsupervised learning.
+            </label>
+            <label>
+              <input type="radio" name="q6" value="d">
+               Supervised learning is more accurate than unsupervised learning. (Improved - emphasizes core supervised learning concept)
+            </label>
+            <label>
+              <input type="radio" name="q6" value="e">
+               Supervised learning requires less data than unsupervised learning.
+            </label>
+          </div>
+        </div>
+
+        <div class="question">
+          <p>7. Machine Learning (ML):  What is the role of a validation set in machine learning models?</p>
+          <div class="answers">
+            <label>
+              <input type="radio" name="q7" value="a">
+              To store the trained model
+            </label>
+            <label>
+              <input type="radio" name="q7" value="b">
+               To evaluate model performance on unseen data
+            </label>
+            <label>
+              <input type="radio" name="q7" value="c">
+               To pre-process the training data
+            </label>
+            <label>
+              <input type="radio" name="q7" value="d">
+              To tune hyperparameters  (Improved - highlights validation set's specific purpose)
+            </label>
+            <label>
+              <input type="radio" name="q7" value="e">
+              To visualize model predictions
+            </label>
+          </div>
+        </div>
+
+        <div class="question">
+          <p>8. Big Data: Which technology is commonly used to process and analyze large datasets?</p>
+          <div class="answers">
+            <label>
+              <input type="radio" name="q8" value="a">
+              Relational databases
+            </label>
+            <label>
+              <input type="radio" name="q8" value="b">
+               Cloud storage services
+            </label>
+            <label>
+              <input type="radio" name="q8" value="c">
+               Data warehousing
+            </label>
+            <label>
+              <input type="radio" name="q8" value="d">
+               Big Data frameworks like Hadoop or Spark  (Improved - emphasizes modern big data tools)
+            </label>
+            <label>
+              <input type="radio" name="q8" value="e">
+               Spreadsheets
+            </label>
+          </div>
+        </div>
+
+        <div class="question">
+          <p>9. Internet of Things (IoT): What is a key challenge associated with securing IoT devices?</p>
+          <div class="answers">
+            <label>
+              <input type="radio" name="q9" value="a">
+               Limited processing power
+            </label>
+            <label>
+              <input type="radio" name="q9" value="b">
+              Inconsistent user interfaces
+            </label>
+            <label>
+              <input type="radio" name="q9" value="c">
+               Difficulty in applying traditional security measures  (Improved - highlights specific IoT security concern)
+            </label>
+            <label>
+              <input type="radio" name="q9" value="d">
+               Lack of standardization
+            </label>
+            <label>
+              <input type="radio" name="q9" value="e">
+               Short battery life
+            </label>
+          </div>
+        </div>
+
+        <div class="question">
+          <p>10. Blockchain: What is the defining characteristic of a blockchain network?</p>
+          <div class="answers">
+            <label>
+              <input type="radio" name="q10" value="a">
+               Secure communication channel
+            </label>
+            <label>
+              <input type="radio" name="q10" value="b">
+               Decentralized and distributed ledger
+            </label>
+            <label>
+              <input type="radio" name="q10" value="c">
+               High-speed data transfer
+            </label>
+            <label>
+              <input type="radio" name="q10" value="d">
+              Real-time data processing  (Improved - focuses on core blockchain property)
+            </label>
+            <label>
+              <input type="radio" name="q10" value="e">
+               Cloud-based storage solution
+            </label>
+          </div>
+        </div>
+
+        <div class="question">
+          <p>11. Software Development: Which development methodology emphasizes iterative development and continuous feedback?</p>
+          <div class="answers">
+            <label>
+              <input type="radio" name="q11" value="a">
+               Waterfall model
+            </label>
+            <label>
+              <input type="radio" name="q11" value="b">
+              Agile methodology  (Improved - highlights specific methodology)
+            </label>
+            <label>
+              <input type="radio" name="q11" value="c">
+               Spiral model
+            </label>
+            <label>
+              <input type="radio" name="q11" value="d">
+               Prototyping
+            </label>
+            <label>
+              <input type="radio" name="q11" value="e">
+               Design thinking
+            </label>
+          </div>
+        </div>
+
+        <div class="question">
+          <p>12. DevOps: What is the primary goal of DevOps practices?</p>
+          <div class="answers">
+            <label>
+              <input type="radio" name="q12" value="a">
+              Improve code quality
+            </label>
+            <label>
+              <input type="radio" name="q12" value="b">
+              Automate software delivery and infrastructure management  (Improved - emphasizes DevOps core objective)
+            </label>
+            <label>
+              <input type="radio" name="q12" value="c">
+               Enhance developer productivity
+            </label>
+            <label>
+              <input type="radio" name="q12" value="d">
+               Facilitate communication between developers and operations teams
+            </label>
+            <label>
+              <input type="radio" name="q12" value="e">
+               Reduce software development costs
+            </label>
+          </div>
+        </div>
+
+        <div class="question">
+          <p>13. Software Testing: Which type of testing focuses on identifying defects in the user interface (UI) and user experience (UX)?</p>
+          <div class="answers">
+            <label>
+              <input type="radio" name="q13" value="a">
+               Unit testing
+            </label>
+            <label>
+              <input type="radio" name="q13" value="b">
+              Integration testing
+            </label>
+            <label>
+              <input type="radio" name="q13" value="c">
+               Usability testing  (Improved - highlights specific testing type)
+            </label>
+            <label>
+              <input type="radio" name="q13" value="d">
+               System testing
+            </label>
+            <label>
+              <input type="radio" name="q13" value="e">
+              Regression testing
+            </label>
+          </div>
+        </div>
+
+        <div class="question">
+          <p>14. Virtualization: What is the benefit of using virtual machines (VMs)?</p>
+          <div class="answers">
+            <label>
+              <input type="radio" name="q14" value="a">
+              Increased hardware cost-efficiency
+            </label>
+            <label>
+              <input type="radio" name="q14" value="b">
+               Improved software compatibility
+            </label>
+            <label>
+              <input type="radio" name="q14" value="c">
+               Enhanced application security
+            </label>
+            <label>
+              <input type="radio" name="q14" value="d">
+              All of the above  (Improved - comprehensive benefit)
+            </label>
+            <label>
+              <input type="radio" name="q14" value="e">
+               None of the above
+            </label>
+          </div>
+        </div>
+
+        <div class="question">
+          <p>15. Cloud Security: Which security model grants access to cloud resources based on user roles and permissions?</p>
+          <div class="answers">
+            <label>
+              <input type="radio" name="q15" value="a">
+               Zero-trust security
+            </label>
+            <label>
+              <input type="radio" name="q15" value="b">
+               Shared responsibility model
+            </label>
+            <label>
+              <input type="radio" name="q15" value="c">
+               Identity and Access Management (IAM)  (Improved - focuses on specific security model)
+            </label>
+            <label>
+              <input type="radio" name="q15" value="d">
+             Data encryption
+            </label>
+            <label>
+              <input type="radio" name="q15" value="e">
+              Multi-factor authentication (MFA)
+            </label>
+          </div>
+        </div>
+
+        <div class="question">
+          <p>16. Data Science: What is the role of data cleaning in data analysis?</p>
+          <div class="answers">
+            <label>
+              <input type="radio" name="q16" value="a">
+              To compress large datasets
+            </label>
+            <label>
+              <input type="radio" name="q16" value="b">
+              To identify and address inconsistencies and errors in data  (Improved - emphasizes data cleaning purpose)
+            </label>
+            <label>
+              <input type="radio" name="q16" value="c">
+              To transform data into a format suitable for analysis
+            </label>
+            <label>
+              <input type="radio" name="q16" value="d">
+              To visualize data trends
+            </label>
+            <label>
+              <input type="radio" name="q16" value="e">
+               To build predictive models
+            </label>
+          </div>
+        </div>
+
+        <div class="question">
+          <p>17. Ethical AI: What is a potential ethical concern associated with AI algorithms?</p>
+          <div class="answers">
+            <label>
+              <input type="radio" name="q17" value="a">
+              High computational cost
+            </label>
+            <label>
+              <input type="radio" name="q17" value="b">
+              Difficulty in debugging
+            </label>
+            <label>
+              <input type="radio" name="q17" value="c">
+               Algorithmic bias leading to unfair outcomes  (Improved - highlights ethical concern)
+            </label>
+            <label>
+              <input type="radio" name="q17" value="d">
+               Lack of explainability in decision-making processes
+            </label>
+            <label>
+              <input type="radio" name="q17" value="e">
+               Over-reliance on human supervision
+            </label>
+          </div>
+        </div>
+
+        <div class="question">
+          <p>18. Augmented Reality (AR): How does AR differ from Virtual Reality (VR)?</p>
+          <div class="answers">
+            <label>
+              <input type="radio" name="q18" value="a">
+               AR overlays digital elements on the real world, while VR creates a completely immersive virtual environment.  (Improved - clear explanation of difference)
+            </label>
+            <label>
+              <input type="radio" name="q18" value="b">
+               AR requires a headset, while VR can be accessed through mobile devices.
+            </label>
+            <label>
+              <input type="radio" name="q18" value="c">
+               AR is primarily used for entertainment, while VR has more industrial applications.
+            </label>
+            <label>
+              <input type="radio" name="q18" value="d">
+               AR offers a wider field of view than VR.
+            </label>
+            <label>
+              <input type="radio" name="q18" value="e">
+               AR has lower hardware requirements than VR.
+            </label>
+          </div>
+        </div>
+
+        <div class="question">
+          <p>19. Programming Languages: Which programming language is known for its ease of use and focus on web development?</p>
+          <div class="answers">
+            <label>
+              <input type="radio" name="q19" value="a">
+               C++
+            </label>
+            <label>
+              <input type="radio" name="q19" value="b">
+               Java
+            </label>
+            <label>
+              <input type="radio" name="q19" value="c">
+               Python
+            </label>
+            <label>
+              <input type="radio" name="q19" value="d">
+               JavaScript  (Improved - emphasizes language's use case)
+            </label>
+            <label>
+              <input type="radio" name="q19" value="e">
+              C#
+            </label>
+          </div>
+        </div>
+
+        <div class="question">
+          <p>20. Emerging Technologies: What technology is gaining traction in the field of autonomous vehicles?</p>
+          <div class="answers">
+            <label>
+              <input type="radio" name="q20" value="a">
+               Cloud computing
+            </label>
+            <label>
+              <input type="radio" name="q20" value="b">
+               Blockchain
+            </label>
+            <label>
+              <input type="radio" name="q20" value="c">
+             LiDAR (Light Detection and Ranging) for object detection  (Improved - focuses on specific technology)
+            </label>
+            <label>
+              <input type="radio" name="q20" value="d">
+              Quantum computing
+            </label>
+            <label>
+              <input type="radio" name="q20" value="e">
+              Machine learning for decision-making
+            </label>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+    
+    <div class="result" id="result"></div>
+  </div>
+  
+  <script>
+    const quizForm = document.getElementById('quiz-form');
+    const resultDiv = document.getElementById('result');
+    const correctAnswers = ['d', 'b', 'd', 'a', 'd', 'a', 'b', 'd', 'c', 'b', 'b', 'b', 'c', 'd', 'c', 'b', 'a', 'c', 'c', 'c'];
+    
+    quizForm.addEventListener('submit', e => {
+      e.preventDefault();
+      
+      let score = 0;
+      const userAnswers = [
+        quizForm.q1.value, 
+        quizForm.q2.value, 
+        quizForm.q3.value, 
+        quizForm.q4.value, 
+        quizForm.q5.value, 
+        quizForm.q6.value, 
+        quizForm.q7.value, 
+        quizForm.q8.value, 
+        quizForm.q9.value, 
+        quizForm.q10.value, 
+        quizForm.q11.value, 
+        quizForm.q12.value, 
+        quizForm.q13.value, 
+        quizForm.q14.value, 
+        quizForm.q15.value, 
+        quizForm.q16.value, 
+        quizForm.q17.value, 
+        quizForm.q18.value, 
+        quizForm.q19.value, 
+        quizForm.q20.value
+      ];
+      
+      userAnswers.forEach((answer, index) => {
+        if (answer === correctAnswers[index]) {
+          score += 1;
+        }
+      });
+    
+      resultDiv.innerHTML = `Your score is ${score}/${correctAnswers.length}`;
+    });
+</script>
+</body>
+</html>
